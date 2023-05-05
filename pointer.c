@@ -1,14 +1,16 @@
 #include<stdio.h>
+void swap(int *a, int *b);
 
 int main(void){
-    int num1, num2, box;
-    printf("정수 num1과 num2를 입력해주세요:");
-    scanf("%d %d",&num1,&num2);
-    printf("num1=%d, num2=%d\n",num1,num2);
-    box = num1;
-    num1 = num2;
-    num2 = box;
-    printf("num1=%d, num2=%d",num1,num2);
-
-    return 0;
+    int a = 10;
+    int b = 20;
+    printf("a: %d b: %d\n",a,b);
+    swap(&a, &b);
+    printf("a: %d b: %d\n",a,b);
+}
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("a: %d b: %d\n",*a,*b);
 }
